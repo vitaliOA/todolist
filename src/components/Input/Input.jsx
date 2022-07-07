@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { StyledInput } from "./Input.style";
+import { StyledButton, StyledInput, InputWrapper } from "./Input.style";
 import { PropTypes } from "prop-types";
 
 export const Input = ({ addTodo }) => {
@@ -12,13 +12,23 @@ export const Input = ({ addTodo }) => {
     }
   };
 
+  const tooHandleSubmit = () => {
+    if (value && value.trim()) {
+      addTodo(value.trim());
+      setValue();
+    }
+  };
+
   return (
-    <StyledInput
-      type="text"
-      value={value || ""}
-      onChange={(e) => setValue(e.target.value)}
-      onKeyDown={handleSubmit}
-    />
+    <InputWrapper>
+      <StyledInput
+        type="text"
+        value={value || ""}
+        onChange={(e) => setValue(e.target.value)}
+        onKeyDown={handleSubmit}
+      />
+      <StyledButton onClick={tooHandleSubmit}>Add</StyledButton>
+    </InputWrapper>
   );
 };
 

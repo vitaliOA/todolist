@@ -11,5 +11,16 @@ export const TasksList = styled.div`
   margin-top: 10px;
   align-items: flex-start;
   width: 900px;
-  background-color: #d8eef1;
 `;
+
+export const FunctionalWrapper = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  width: 600px;
+`;
+
+export const StyledSelect = styled.select``;
+
+export const StyledOptionOne = styled.option``;
+
+export const StyledOptionTwo = styled.option``;
